@@ -91,16 +91,21 @@ class Classes extends Component {
         //pagination
         return (
             <div className="content">
-                {
-                    this.state.showLoading ?
-                        <div>Загрузка...</div>
-                        : <>
-                            {prerendered}
-                            <Pagination
-                                currentPage={this.state.page}
-                                pages={this.state.numberOfPages}
-                                onPageButtonClick={(i) => { this.handlePageButtonClick(i) }}
-                            /></>
+                {this.state.numberOfPages ? <>
+                    {
+                        this.state.showLoading ?
+                            <div>Загрузка...</div>
+                            : <>
+                                {prerendered}
+                                <Pagination
+                                    currentPage={this.state.page}
+                                    pages={this.state.numberOfPages}
+                                    onPageButtonClick={(i) => { this.handlePageButtonClick(i) }}
+                                /></>
+                    }
+                </>
+                    :
+                    <h4>Здесь пока что ничего нет</h4>
                 }
             </div>
 
