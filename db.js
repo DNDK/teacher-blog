@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var mongoDB = 'mongodb+srv://dndk:TbO4VkU3lGKIrJ60@cluster0.57dln.mongodb.net/blogdb?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGO_URI;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 var db = mongoose.connection;
